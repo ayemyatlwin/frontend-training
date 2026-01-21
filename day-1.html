@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML Basics: Elements, Tables & Forms | Training</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        line-height: 1.5;
+        padding: 20px;
+        max-width: 800px;
+        /* background-color: blue; */
+        margin: auto;
+      }
+      section {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 10px 0;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+      }
+      .code-box {
+        background: #eee;
+        padding: 10px;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Web Development Training</h1>
+      <h1>Web Development Training</h1>
+      <span>Web Development Training</span>
+      <span>Web Development Training</span>
+
+      <p>A simple guide to HTML structure and developer tools.</p>
+    </header>
+
+    <hr />
+
+    <section>
+      <img
+        src="./images/img.jpg"
+        alt="Description of image"
+        width="150"
+        height="150"
+      />
+      <h2>1. HTML Elements & Attributes</h2>
+      <p>
+        Elements use tags to wrap content. Attributes live inside the start tag.
+      </p>
+
+      <div class="code-box">
+        &lt;a href="https://apple.com" target="_blank"&gt;Visit Apple&lt;/a&gt;
+      </div>
+
+      <p>
+        <a href="https://apple.com" target="_blank"
+          >Click here to visit Apple.com (Demo)</a
+        >
+      </p>
+    </section>
+
+    <section>
+      <h2>2. HTML Tables</h2>
+      <table>
+        <tr>
+          <th>Topic</th>
+          <th>Tool</th>
+          <th>Priority</th>
+        </tr>
+        <tr>
+          <td>Structure</td>
+          <td>&lt;table&gt;</td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>Formatting</td>
+          <td>Prettier</td>
+          <td>Critical</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. HTML Forms</h2>
+      <form>
+        <p>
+          <label>Student Name:</label><br />
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter name"
+            required
+          />
+        </p>
+
+        <p>
+          <label>Course:</label><br />
+          <select name="course">
+            <option value="html">HTML5</option>
+            <option value="css">CSS3</option>
+          </select>
+        </p>
+
+        <p>
+          <input type="checkbox" id="learn" name="learn" />
+          <label for="learn">I agree to practice daily.</label>
+        </p>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>4. Developer Toolkit</h2>
+      <h3>VS Code + Prettier</h3>
+      <p>
+        Enable <strong>"Format on Save"</strong> in VS Code settings to keep
+        your code neat automatically.
+      </p>
+
+      <h3>Chrome DevTools (F12)</h3>
+      <ul>
+        <li>
+          <strong>Inspect:</strong> Right-click any element to see its code.
+        </li>
+        <li>
+          <strong>Live Edit:</strong> Double-click text in the "Elements" tab to
+          change it on your screen.
+        </li>
+        <li>
+          <strong>Device Mode:</strong> Use the phone icon to test mobile views.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Live Exercise</h2>
+      <ol>
+        <li>
+          Go to <a href="https://apple.com" target="_blank">Apple.com</a>.
+        </li>
+        <li>Open DevTools (Right-click > Inspect).</li>
+        <li>Find the main headline and change it to your name.</li>
+        <li>Toggle the "Device Toolbar" to see the mobile layout.</li>
+      </ol>
+    </section>
+
+    <footer>
+      <p><small>&copy; 2026 Web Dev Lesson</small></p>
+    </footer>
+  </body>
+</html>
