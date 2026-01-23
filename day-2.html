@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Basics: Display, Box Model, Spacing | Training</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        color: #333;
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 12px;
+      }
+
+      section {
+        background: #fff;
+        padding: 16px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+
+      .flex-container {
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .flex-item {
+        background: #4f46e5;
+        color: #fff;
+        padding: 16px;
+        flex: 1;
+        text-align: center;
+        border-radius: 6px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .grid-item {
+        background: #16a34a;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML & CSS Lesson (All in One)</h1>
+
+    <section>
+      <h2>1. Flexbox</h2>
+      <div class="flex-container">
+        <div class="flex-item">Flex 1</div>
+        <div class="flex-item">Flex 2</div>
+        <div class="flex-item">Flex 3</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. CSS Grid</h2>
+      <div class="grid-container">
+        <div class="grid-item">Grid 1</div>
+        <div class="grid-item">Grid 2</div>
+        <div class="grid-item">Grid 3</div>
+        <div class="grid-item">Grid 4</div>
+        <div class="grid-item">Grid 5</div>
+        <div class="grid-item">Grid 6</div>
+      </div>
+    </section>
+  </body>
+</html>
