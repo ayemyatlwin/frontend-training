@@ -114,3 +114,81 @@ I used **W3Schools** as a primary reference for this project:
 - HTML Forms and Inputs
 - CSS Box Model Guide
 - HTML Display Property (Block / Inline)
+
+---
+
+# JavaScript Learning Resources
+
+- [What is JavaScript?](https://www.geeksforgeeks.org/javascript/javascript-tutorial/)
+
+---
+
+- [Variables, Data Types, Array, Object -- Mutable & Immutable](https://www.geeksforgeeks.org/javascript/variables-datatypes-javascript/)
+
+---
+
+- [Variable naming conventions in JavaScript](https://www.geeksforgeeks.org/javascript/what-are-the-variable-naming-conventions-in-javascript/)
+
+---
+
+- [Objects in JavaScript](https://www.geeksforgeeks.org/javascript/objects-in-javascript/)
+
+---
+
+- [JavaScript String Methods](https://www.geeksforgeeks.org/javascript/javascript-string-methods/)
+
+---
+
+- [JavaScript Array Methods](https://www.geeksforgeeks.org/javascript/javascript-array-methods/)
+
+---
+
+- [Scope of Variables in JavaScript](https://www.geeksforgeeks.org/javascript/javascript-scope/)
+
+---
+
+- [Type Conversion and Type Coercion in JavaScript](https://www.geeksforgeeks.org/javascript/type-conversion-and-type-coercion-in-javascript/)
+
+---
+
+- [Operators in JavaScript](https://www.geeksforgeeks.org/javascript/javascript-operators/)
+
+---
+
+- [Conditional Statements](https://www.geeksforgeeks.org/javascript/conditional-statements-in-javascript/)
+
+---
+
+- [Loops in JavaScript](https://www.geeksforgeeks.org/javascript/loops-in-javascript/)
+
+---
+
+- [Functions and Arrow Functions](https://www.geeksforgeeks.org/javascript/functions-in-javascript/)
+
+---
+
+- [JavaScript Function Expression](https://www.geeksforgeeks.org/javascript/javascript-function-expression/)
+
+---
+
+- [DOM (Document Object Model)](https://www.geeksforgeeks.org/html/javascript-html-dom/)
+
+---
+
+- [Events in JavaScript](https://www.geeksforgeeks.org/javascript/javascript-events/)
+
+---
+
+- [try...catch in JavaScript](https://www.geeksforgeeks.org/javascript/javascript-errors-throw-and-try-to-catch/)
+
+---
+
+- [Promise in JavaScript](https://www.geeksforgeeks.org/javascript/javascript-promise/)
+
+---
+
+- [Async/Await in JavaScript](https://www.geeksforgeeks.org/javascript/async-await-function-in-javascript/)
+
+---
+
+- [JSON Fetch in JavaScript](https://www.geeksforgeeks.org/javascript/javascript-fetch-method/)
