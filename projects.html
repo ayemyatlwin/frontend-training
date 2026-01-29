@@ -89,12 +89,18 @@
     <script>
       //#region  Project -- To-DO-LIST
       const input = document.getElementById("taskInput");
+      console.log("input", input);
+
       const addBtn = document.getElementById("addTask");
+      console.log("addBtn", addBtn);
+
       const taskList = document.getElementById("taskList");
 
       let tasks = [];
 
       addBtn.addEventListener("click", () => {
+        console.log("input.value", input.value);
+
         const task = input.value.trim();
         if (task === "") {
           alert("Task cannot be empty!");

@@ -179,6 +179,18 @@ I used **W3Schools** as a primary reference for this project:
 
 ---
 
+- [Understanding DOM Events and JavaScript Event Listeners](https://www.freecodecamp.org/news/dom-events-and-javascript-event-listeners/)
+
+---
+
+- [What is the Document Object Model? DOM for Beginners](https://www.freecodecamp.org/news/introduction-to-the-dom/)
+
+---
+
+- [How to Manipulate the DOM in JavaScript – Most Commonly Used Techniques](https://www.freecodecamp.org/news/javascript-document-object-model-explained/)
+
+---
+
 - [try...catch in JavaScript](https://www.geeksforgeeks.org/javascript/javascript-errors-throw-and-try-to-catch/)
 
 ---
@@ -192,3 +204,15 @@ I used **W3Schools** as a primary reference for this project:
 ---
 
 - [JSON Fetch in JavaScript](https://www.geeksforgeeks.org/javascript/javascript-fetch-method/)
+
+---
+
+- [How to Use JavaScript Arrow Functions – Explained in Detail](https://www.freecodecamp.org/news/javascript-arrow-functions-in-depth/)
+
+---
+
+- [How JavaScript Promises Work – Tutorial for Beginners](https://www.freecodecamp.org/news/javascript-promise-object-explained/)
+
+---
+
+- [JavaScript Fetch API For Beginners – Explained With Code Examples](https://www.freecodecamp.org/news/javascript-fetch-api-for-beginners/)
