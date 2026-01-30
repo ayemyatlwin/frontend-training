@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+  <head>
+    <title>User CRUD</title>
+  </head>
+  <body>
+    <h1>User CRUD</h1>
+
+    <!-- Create Form -->
+    <div>
+      <h2>Add User</h2>
+      <form id="createForm">
+        <input type="text" id="name" placeholder="Name" />
+        <input type="email" id="email" placeholder="Email" />
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <!-- Edit Form -->
+    <div
+      id="editForm"
+      style="
+        display: none;
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      "
+    >
+      <h2>Edit User</h2>
+      <form id="editFormForm">
+        <input type="hidden" id="editId" />
+        <input type="text" id="editName" placeholder="Name" />
+        <input type="email" id="editEmail" placeholder="Email" />
+        <button type="submit">Save</button>
+        <button type="button" onclick="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Status -->
+    <div id="status"></div>
+
+    <!-- Users List -->
+    <div>
+      <h2>Users</h2>
+      <button onclick="getAllUsers()">Refresh</button>
+      <div id="usersList"></div>
+    </div>
+
+    <script>
+      const API_URL = "https://jsonplaceholder.typicode.com/users";
+      let users = [];
+      let editingId = null;
+
+      // Get all users
+      async function getAllUsers() {
+        try {
+          showStatus("Loading...");
+          const response = await fetch(API_URL);
+
+          if (!response.ok) throw new Error("Failed to load");
+
+          users = await response.json();
+          showUsers();
+          showStatus("");
+        } catch (error) {
+          showStatus("Error: " + error.message);
+        }
+      }
+
+      // Create user
+      async function createUser(name, email) {
+        try {
+          showStatus("Creating...");
+
+          const response = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email }),
+          });
+
+          if (!response.ok) throw new Error("Create failed");
+
+          const newUser = await response.json();
+          users.unshift(newUser);
+          showUsers();
+          document.getElementById("createForm").reset();
+          showStatus("");
+        } catch (error) {
+          showStatus("Error: " + error.message);
+        }
+      }
+
+      // Update user
+      async function updateUser(id, name, email) {
+        try {
+          showStatus("Updating...");
+
+          if (id <= 100) {
+            const response = await fetch(`${API_URL}/${id}`, {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, email }),
+            });
+          }
+
+          const userIndex = users.findIndex((u) => u.id === id);
+          if (userIndex !== -1) {
+            users[userIndex].name = name;
+            users[userIndex].email = email;
+          }
+
+          showUsers();
+          hideEditForm();
+          showStatus("Updated locally (Server skip for new items)");
+        } catch (error) {
+          showStatus("Error: " + error.message);
+        }
+      }
+
+      // Delete user
+      async function deleteUser(id) {
+        try {
+          showStatus("Deleting...");
+
+          const response = await fetch(`${API_URL}/${id}`, {
+            method: "DELETE",
+          });
+
+          if (!response.ok) throw new Error("Delete failed");
+
+          users = users.filter((user) => user.id !== id);
+          showUsers();
+          showStatus("");
+        } catch (error) {
+          showStatus("Error: " + error.message);
+        }
+      }
+
+      // Show users in list
+      function showUsers() {
+        const usersList = document.getElementById("usersList");
+
+        if (users.length === 0) {
+          usersList.innerHTML = "<p>No users</p>";
+          return;
+        }
+
+        let html = "<ul>";
+        users.forEach((user) => {
+          html += `
+                    <li>
+                        ${user.id} - ${user.name} (${user.email})
+                        <button onclick="showEditForm(${user.id}, '${user.name}', '${user.email}')">Edit</button>
+                        <button onclick="deleteUser(${user.id})">Delete</button>
+                    </li>
+                `;
+        });
+        html += "</ul>";
+
+        usersList.innerHTML = html;
+      }
+
+      // Show edit form
+      function showEditForm(id, name, email) {
+        document.getElementById("editId").value = id;
+        document.getElementById("editName").value = name;
+        document.getElementById("editEmail").value = email;
+        document.getElementById("editForm").style.display = "block";
+        editingId = id;
+      }
+
+      // Hide edit form
+      function hideEditForm() {
+        document.getElementById("editForm").style.display = "none";
+        editingId = null;
+      }
+
+      // Cancel edit
+      function cancelEdit() {
+        hideEditForm();
+        showStatus("");
+      }
+
+      // Show status message
+      function showStatus(message) {
+        document.getElementById("status").textContent = message;
+      }
+
+      // Event listeners
+      document
+        .getElementById("createForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+
+          if (!name || !email) {
+            showStatus("Please fill all fields");
+            return;
+          }
+
+          await createUser(name, email);
+        });
+
+      document
+        .getElementById("editFormForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const id = parseInt(document.getElementById("editId").value);
+          const name = document.getElementById("editName").value;
+          const email = document.getElementById("editEmail").value;
+
+          if (!name || !email) {
+            showStatus("Please fill all fields");
+            return;
+          }
+
+          await updateUser(id, name, email);
+        });
+
+      // Load users on page load
+      getAllUsers();
+    </script>
+  </body>
+</html>
